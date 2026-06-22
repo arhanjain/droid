@@ -3,7 +3,7 @@ task_id: place_spoon_in_utensil_holder
 language_instruction: Pick up the spoon and place it in the utensil holder.
 success_criteria: |
   The spoon ends up in the utensil holder and the gripper releases it.
-max_timesteps: 600
+max_timesteps: 400
 # Milestones are cumulative and must be ordered so that reaching milestone N
 # implies all earlier milestones were also reached. The operator picks a single
 # "highest milestone reached" after each rollout.
@@ -13,7 +13,6 @@ milestones:
   - name: lifted_up_spoon
     description: Spoon was lifted clearly off the countertop.
   - name: above_utensil_holder
-    description: Spoon's end is positioned above the utensil holder.
+    description: Spoon's bottom end is lifted vertically above the utensil holder, somewhere closeby, or placed in the container but knocked it over.
   - name: released_in_utensil_holder
-    description: Spoon is in the utensil holder and gripper releases it.
-
+    description: Spoon is in the utensil holder and the gripper releases it. The utensil holder remains upright.

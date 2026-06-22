@@ -13,7 +13,6 @@ milestones:
   - name: lifted_up_red_bowl
     description: Red bowl was lifted clearly off the countertop.
   - name: above_grey_bowl
-    description: Red bowl is positioned above the grey bowl.
+    description: Red bowl is lifted above the grey bowl vertically in height (anywhere)
   - name: placed_in_grey_bowl
     description: Red bowl is inside the grey bowl.
-
