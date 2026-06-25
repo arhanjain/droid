@@ -43,7 +43,7 @@ cd submodules/molmoact2
 GIT_LFS_SKIP_SMUDGE=1 uv sync                       # setup venv (CUDA-12.1 torch wheels)
 uv run hf download allenai/MolmoAct2-DROID          # download checkpoint (~22 GB, cached under ~/.cache/huggingface)
 # openpi-websocket server — use this one for the bench eval
-uv run ../../scripts/serve/host_server_droid_openpi.py --host 0.0.0.0 --port 8000 --dtype bfloat16
+uv run ../../scripts/server/host_server_droid_openpi.py --host 0.0.0.0 --port 8000 --dtype bfloat16
 
 # Pi07?
 ```
