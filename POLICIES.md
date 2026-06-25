@@ -37,5 +37,13 @@ XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 uv run scripts/serve_policy.py policy:checkp
 # Paligemma Binning DROID Jointpos
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 uv run scripts/serve_policy.py policy:checkpoint --policy.config paligemma_binning_droid_jointpos --policy.dir gs://openpi-assets/checkpoints/paligemma_binning_droid_jointpos
 
-# Others policies - MolmoAct2? Pi07?
+# MolmoAct2-DROID
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/arhanjain/molmoact2.git submodules/molmoact2  # clone repo
+cd submodules/molmoact2
+GIT_LFS_SKIP_SMUDGE=1 uv sync                       # setup venv (CUDA-12.1 torch wheels)
+uv run hf download allenai/MolmoAct2-DROID          # download checkpoint (~22 GB, cached under ~/.cache/huggingface)
+# openpi-websocket server — use this one for the bench eval
+uv run ../../scripts/server/host_server_droid_openpi.py --host 0.0.0.0 --port 8000 --dtype bfloat16
+
+# Pi07?
 ```
