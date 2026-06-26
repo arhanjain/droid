@@ -1,0 +1,18 @@
+institution: UPenn
+task_id: pick_and_place_color_plate
+language_instruction: Pick up the colored plate and place it on the target.
+success_criteria: |
+  The colored plate is placed on the target and the gripper releases it.
+max_timesteps: 450
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_plate
+    description: Gripper made contact with the colored plate.
+  - name: lifted_plate
+    description: Plate was lifted clear off the table.
+  - name: placed_on_target
+    description: Plate was positioned over the target location.
+  - name: released_on_target
+    description: Plate was released and rests on the target.

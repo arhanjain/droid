@@ -1,0 +1,18 @@
+institution: UPenn
+task_id: open_drawer
+language_instruction: Open the left upper drawer.
+success_criteria: |
+  The left upper drawer is pulled fully open.
+max_timesteps: 450
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_handle
+    description: Gripper made contact with the drawer handle.
+  - name: grasped_handle
+    description: Gripper closed on the drawer handle.
+  - name: drawer_half_open
+    description: Drawer was pulled halfway open.
+  - name: drawer_opened
+    description: Drawer was pulled fully open.

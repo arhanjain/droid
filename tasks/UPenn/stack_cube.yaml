@@ -1,0 +1,20 @@
+institution: UPenn
+task_id: stack_cube
+language_instruction: Stack the cube on top of the other cube.
+success_criteria: |
+  The cube is stacked on top of the other cube and remains balanced after release.
+max_timesteps: 450
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_cube
+    description: Gripper made contact with the cube to be moved.
+  - name: grasped_cube
+    description: Gripper closed on and grasped the cube.
+  - name: lifted_cube
+    description: Cube was lifted clear off the table.
+  - name: aligned_over_base
+    description: Cube was positioned directly above the base cube.
+  - name: stacked_cube
+    description: Cube was released and remains stacked on the base cube.
