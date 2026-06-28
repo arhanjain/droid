@@ -93,3 +93,27 @@ python scripts/evaluation/aggregate_scores.py --output-dir runs
 python scripts/evaluation/aggregate_scores.py --output-dir runs --out csv
 ```
 
+## Uploading results
+
+Eval results are collected in the shared `roboarena-sim` S3 bucket. Upload your `runs/` directory with `scripts/evaluation/upload_eval.py`, passing the credentials you were sent inline (fill these in):
+
+```bash
+ROBOARENA_ACCESS_KEY_ID= ROBOARENA_SECRET_ACCESS_KEY= \
+  python scripts/evaluation/upload_eval.py runs
+```
+
+The script walks the directory and uploads every file, mirroring the local layout at the bucket root. Because the eval output is already organized by `{institution}/{task_id}/{policy_name}/{timestamp}/`, results land in the bucket under the same structure:
+
+```
+s3://roboarena-sim/
+  {institution}/
+    {task_id}/
+      {policy_name}/
+        {YYYY_MM_DD_HH:MM:SS}/
+          trajectory.h5
+          scores.json
+          video_preview.mp4
+```
+
+You can also upload a single file or a specific run directory by passing its path instead of `runs`.
+
