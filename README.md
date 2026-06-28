@@ -62,7 +62,7 @@ python scripts/evaluation/evaluate_bench.py \
   --task-config tasks/example_institution/pick_red_block.yaml \
   --policy-name pi0_fast_droid_jointpos \
   --operator arhan \
-  --n-episodes 5 \
+  --n-episodes 20 \
   --external-camera left \
   --remote-host 0.0.0.0 \
   --remote-port 8000
