@@ -1,0 +1,18 @@
+institution: MILA
+task_id: place_spoon_in_sink
+language_instruction: Pick up the spoon and place it in the sink.
+success_criteria: |
+  The spoon ends up lying flat in the sink and the gripper releases it.
+max_timesteps: 300
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_spoon
+    description: Gripper made contact with the spoon.
+  - name: lifted_up_spoon
+    description: Spoon was lifted clearly off the countertop.
+  - name: above_sink
+    description: The majority of the spoon (in the gripper or dropped) is above the sink, but not placed fully in the sink (either it's standing up or not released yet).
+  - name: completely_in_sink
+    description: Spoon ends up completely in the sink and the gripper releases it.

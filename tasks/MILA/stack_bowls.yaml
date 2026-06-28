@@ -1,0 +1,18 @@
+institution: MILA
+task_id: stack_red_bowl_into_grey_bowl
+language_instruction: Pick up the red bowl and place it in the grey bowl.
+success_criteria: |
+  The red bowl ends up inside the grey bowl.
+max_timesteps: 600
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_red_bowl
+    description: Gripper made contact with the red bowl.
+  - name: lifted_up_red_bowl
+    description: Red bowl was lifted clearly off the countertop.
+  - name: above_grey_bowl
+    description: Red bowl is lifted above the grey bowl vertically in height (anywhere)
+  - name: placed_in_grey_bowl
+    description: Red bowl is inside the grey bowl.
