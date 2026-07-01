@@ -1,0 +1,18 @@
+institution: Yonsei
+task_id: yellow_plate_to_brown_bowl
+language_instruction: Pick up the yellow plate and put it inside the brown bowl.
+success_criteria: |
+  The yellow plate ends up inside the brown bowl and the gripper releases it.
+max_timesteps: 300
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_plate
+    description: Gripper made contact with the yellow plate.
+  - name: lifted_up_plate
+    description: Yellow plate was lifted clearly off the tabletop.
+  - name: above_bowl
+    description: The majority of the yellow plate (in the gripper or dropped) is above the brown bowl, but not placed fully inside the bowl (either it's standing up or not released yet).
+  - name: completely_in_bowl
+    description: Yellow plate ends up completely inside the brown bowl and the gripper releases it.

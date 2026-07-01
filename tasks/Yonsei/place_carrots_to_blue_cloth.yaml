@@ -1,0 +1,26 @@
+institution: Yonsei
+task_id: place_carrots_to_blue_cloth
+language_instruction: Pick up the carrots and place them on the blue cloth.
+success_criteria: |
+  All the carrots end up on the blue cloth and the gripper releases them.
+max_timesteps: 600
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_carrot_1
+    description: Gripper made contact with the first carrot.
+  - name: lifted_up_carrot_1
+    description: First carrot was lifted clearly off the tabletop.
+  - name: above_cloth_1
+    description: The majority of the first carrot (in the gripper or dropped) is above the blue cloth, but not placed fully on the cloth (either it's standing up or not released yet).
+  - name: completely_on_cloth_1
+    description: First carrot ends up completely on the blue cloth and the gripper releases it.
+  - name: reached_carrot_2
+    description: Gripper made contact with the second carrot.
+  - name: lifted_up_carrot_2
+    description: Second carrot was lifted clearly off the tabletop.
+  - name: above_cloth_2
+    description: The majority of the second carrot (in the gripper or dropped) is above the blue cloth, but not placed fully on the cloth (either it's standing up or not released yet).
+  - name: completely_on_cloth_2
+    description: Second carrot ends up completely on the blue cloth and the gripper releases it.
