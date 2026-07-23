@@ -1,0 +1,20 @@
+institution: University of Texas at Austin
+task_id: put_bread_on_plate
+language_instruction: Put the bread onto the plate.
+success_criteria: |
+The bread is released and remains on the plate.
+max_timesteps: 300
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_bread
+    description: Gripper made contact with the bread.
+  - name: grasped_bread
+    description: Gripper securely grasped the bread.
+  - name: lifted_bread
+    description: Bread was lifted clear of its original surface.
+  - name: released_bread
+    description: Bread was released.
+  - name: placed_bread_on_plate
+    description: Bread was positioned on the plate .
