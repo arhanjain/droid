@@ -1,0 +1,20 @@
+institution: University of Texas at Austin
+task_id: can_to_pink_mug
+language_instruction: Put coke can into the pink mug.
+success_criteria: |
+  The coke can is inside the pink mug and the gripper has released it.
+max_timesteps: 300
+# Milestones are cumulative and must be ordered so that reaching milestone N
+# implies all earlier milestones were also reached. The operator picks a single
+# "highest milestone reached" after each rollout.
+milestones:
+  - name: reached_can
+    description: Gripper made contact with the coke can.
+  - name: grasped_can
+    description: Gripper securely grasped the can.
+  - name: lifted_can
+    description: Coke can was lifted clear off the table.
+  - name: released_can
+    description: Coke can was released.
+  - name: placed_in_mug
+    description: Coke can was placed onto the pink mug.

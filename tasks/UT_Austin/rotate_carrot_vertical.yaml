@@ -1,8 +1,8 @@
 institution: University of Texas at Austin
-task_id: rotate_carrot_90_degrees
-language_instruction: Rotate the carrot by 90 degrees.
+task_id: rotate_carrot_vertical
+language_instruction: Rotate the carrot to vertical direction.
 success_criteria: |
-  The carrot is rotated approximately 90 degrees from its starting orientation.
+  The carrot is rotated to vertical direction.
 max_timesteps: 300
 # Milestones are cumulative and must be ordered so that reaching milestone N
 # implies all earlier milestones were also reached. The operator picks a single
@@ -12,5 +12,5 @@ milestones:
     description: Gripper made contact with the carrot.
   - name: began_rotating_carrot
     description: Carrot orientation changed noticeably from its starting orientation.
-  - name: rotated_90_degrees
-    description: Carrot was rotated approximately 90 degrees from its starting orientation.
+  - name: rotated_vertical
+    description: Carrot was rotated to vertical direction.
